@@ -63,7 +63,6 @@ plugins:
       webhookSecret: ${{ env.WEBHOOK_SECRET }}
       silentMode: true
     '@mrlingxd/adapter-onebot:zjekt1':
-      $if: env.ONEBOT_SELF_ID1 !== undefined
       protocol: ws
       token: ${{ env.ONEBOT_TOKEN_ID1 }}
       selfId: ${{ env.ONEBOT_SELF_ID1 }}

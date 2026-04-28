@@ -1592,6 +1592,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mrlingxd/koishi-plugin-adapter-onebot@npm:0.2.10":
+  version: 0.2.10
+  resolution: "@mrlingxd/koishi-plugin-adapter-onebot@npm:0.2.10"
+  dependencies:
+    qface: "npm:^1.4.1"
+  peerDependencies:
+    koishi: ^4.18.11
+  checksum: 10c0/02bb47f770937448632433814235807979186d0685358736f2955f4d0dabc1f101539a9ccfd8980662ac65e033e70483d4f084e2094e18b2a373c0324858a28d
+  languageName: node
+  linkType: hard
+
 "@noble/hashes@npm:^1.1.5":
   version: 1.8.0
   resolution: "@noble/hashes@npm:1.8.0"
@@ -5479,6 +5490,7 @@ __metadata:
     "@koishijs/plugin-server-temp": "npm:^1.5.0"
     "@koishijs/plugin-status": "npm:^7.4.10"
     "@koishijs/scripts": "npm:^4.6.2"
+    "@mrlingxd/koishi-plugin-adapter-onebot": "npm:0.2.10"
     "@types/node": "npm:^22.19.17"
     "@types/react": "npm:^18.3.28"
     cross-env: "npm:^7.0.3"
@@ -6216,6 +6228,13 @@ __metadata:
     kleur: "npm:^3.0.3"
     sisteransi: "npm:^1.0.5"
   checksum: 10c0/16f1ac2977b19fe2cf53f8411cc98db7a3c8b115c479b2ca5c82b5527cd937aa405fa04f9a5960abeb9daef53191b53b4d13e35c1f5d50e8718c76917c5f1ea4
+  languageName: node
+  linkType: hard
+
+"qface@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "qface@npm:1.4.1"
+  checksum: 10c0/64f84389b120c3a9b3408eacbedf1eac895ab19abdf4341a8610cdc6eff1b1c92024083b342ea091f2fe897544aefb57bd5a509f4483daeee41403065d7a389c
   languageName: node
   linkType: hard
 
