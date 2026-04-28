@@ -1,0 +1,76 @@
+plugins:
+  group:server:
+    server:1juxad:
+      port: 4536
+      maxPort: 4590
+      host: 0.0.0.0
+    ~server-satori:y4ghj6: {}
+    ~server-temp:l29fno: {}
+  group:basic:
+    admin:j1m9d2: {}
+    bind:l1lyq4: {}
+    commands:ljqmfh:
+      help:
+        aliases:
+          help:
+            filter: false
+    help:q5x8dm: {}
+    http:xuxj41: {}
+    ~inspect:mwafva: {}
+    locales:ltap1q: {}
+    ~proxy-agent:cqq70g: {}
+    rate-limit:f1n4gu: {}
+    telemetry:lfx82m: {}
+  group:develop:
+    hmr:2k9f09:
+      root: .
+  group:console:
+    actions:ek958e: {}
+    analytics:i8fv8i: {}
+    android:um5upm:
+      $if: env.KOISHI_AGENT?.includes('Android')
+    auth:as3r4a:
+      $if: env.NODE_ENV !== 'development'
+      admin:
+        username: ${{ env.ADMIN_USERNAME }}
+        password: ${{ env.ADMIN_PASSWORD }}
+    config:a15noe: {}
+    console:xd65d5:
+      open: true
+      uiPath: /manager
+    dataview:xc227o: {}
+    desktop:37i3g8:
+      $if: env.KOISHI_AGENT?.includes('Desktop')
+    explorer:p353el: {}
+    logger:36kg7f: {}
+    insight:74empp: {}
+    market:qkydiz:
+      search:
+        endpoint: https://koishi-registry.yumetsuki.moe/index.json
+    notifier:p0qnop: {}
+    oobe:y6zrs0: {}
+    sandbox:30dyau: {}
+    status:t02hrz: {}
+    theme-vanilla:suxbn7: {}
+  group:storage:
+    database-sqlite:7gog12:
+      $if: env.DATABASE_TYPE === 'sqlite'
+      path: data/koishi.db
+    assets-local:zbu459: {}
+  group:adapter:
+    adapter-github:soadd7:
+      token: ${{ env.GITHUB_TOKEN }}
+      webhookSecret: ${{ env.WEBHOOK_SECRET }}
+      silentMode: true
+    '@mrlingxd/adapter-onebot:zjekt1':
+      $if: env.ONEBOT_SELF_ID1 !== undefined
+      protocol: ws
+      token: ${{ env.ONEBOT_TOKEN_ID1 }}
+      selfId: ${{ env.ONEBOT_SELF_ID1 }}
+      endpoint: ${{ env.ONEBOT_ENDPOINT_ID1 }}
+  '@leafbot/notice:5alkb8':
+    botSid: '12313'
+    groups:
+      - sandbox:dz0vtkdgtl
+prefix:
+  - /
