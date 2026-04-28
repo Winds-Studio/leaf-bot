@@ -38,6 +38,7 @@ plugins:
     console:xd65d5:
       open: true
       uiPath: /manager
+      selfUrl: ${{ env.CONSOLE_URL }}
     dataview:xc227o: {}
     desktop:37i3g8:
       $if: env.KOISHI_AGENT?.includes('Desktop')
@@ -54,7 +55,6 @@ plugins:
     theme-vanilla:suxbn7: {}
   group:storage:
     database-sqlite:7gog12:
-      $if: env.DATABASE_TYPE === 'sqlite'
       path: data/koishi.db
     assets-local:zbu459: {}
   group:adapter:
@@ -69,8 +69,7 @@ plugins:
       selfId: ${{ env.ONEBOT_SELF_ID1 }}
       endpoint: ${{ env.ONEBOT_ENDPOINT_ID1 }}
   '@leafbot/notice:5alkb8':
-    botSid: '12313'
-    groups:
-      - sandbox:dz0vtkdgtl
+    botSid: ${{ env.ONEBOT_SELF_ID1 }}
+    groups: ${{ env.NOTICE_GROUPS.split(',') }}
 prefix:
   - /
