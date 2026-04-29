@@ -62,6 +62,7 @@ plugins:
       token: ${{ env.GITHUB_TOKEN }}
       webhookSecret: ${{ env.WEBHOOK_SECRET }}
       silentMode: true
+      ignoreBotSelf: false
     '@mrlingxd/adapter-onebot:zjekt1':
       protocol: ws
       token: ${{ env.ONEBOT_TOKEN_ID1 }}

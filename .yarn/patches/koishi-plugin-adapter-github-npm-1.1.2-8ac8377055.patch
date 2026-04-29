@@ -1,0 +1,35 @@
+diff --git a/lib/config.d.ts b/lib/config.d.ts
+index e399ebc7544a3fdffe9f0be61f9ada79afed7b14..955d4d155244c50aa0e584dca915bfa1cd6d1b8e 100644
+--- a/lib/config.d.ts
++++ b/lib/config.d.ts
+@@ -17,6 +17,7 @@ export interface Config {
+     proxyUrl?: string;
+     loggerinfo?: boolean;
+     silentMode?: boolean;
++    ignoreBotSelf?: boolean;
+     maxRetries?: number;
+     ignoreNetworkWarnings?: boolean;
+ }
+diff --git a/lib/index.js b/lib/index.js
+index bb6fa705a2722ed966fac61e2d84a2b09c4aeb1e..98307a13c040988074cf705034f0032482d683c8 100644
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -1274,7 +1274,8 @@ var Config = import_koishi3.Schema.intersect([
+   }).description("网络重试设置"),
+   import_koishi3.Schema.object({
+     silentMode: import_koishi3.Schema.boolean().default(false).description("是否以静默模式运行？<br>开启后，不会向 GitHub 发送任何可见内容，包括 send、sendMessage 等方法都不再可用，仅单向接收 GitHub 消息、响应必要的 webhook ping 事件。"),
+-    ignoreNetworkWarnings: import_koishi3.Schema.boolean().default(true).description("是否忽略网络重试警告日志<br>开启后，网络临时故障（如超时、连接重置等）的重试日志将不会显示，只保留严重错误日志")
++    ignoreNetworkWarnings: import_koishi3.Schema.boolean().default(true).description("是否忽略网络重试警告日志<br>开启后，网络临时故障（如超时、连接重置等）的重试日志将不会显示，只保留严重错误日志"),
++    ignoreBotSelf: import_koishi3.Schema.boolean().default(true).description("是否忽略自己触发的事件<br>开启后，机器人自己发起的操作（如创建评论、触发工作流等）所产生的事件将不会被处理，避免死循环和不必要的处理开销")
+   }).description("静默模式"),
+   import_koishi3.Schema.object({
+     loggerinfo: import_koishi3.Schema.boolean().default(false).description("日志调试模式").experimental()
+@@ -1694,7 +1695,7 @@ __name(parseInlineMarkdown, "parseInlineMarkdown");
+ // src/bot/event/session.ts
+ async function handleGitHubEvent(bot, event, owner, repo) {
+   const actorLogin = event.actor?.login || event.actor?.name;
+-  if (actorLogin === bot.selfId) {
++  if (bot.config.ignoreBotSelf && actorLogin === bot.selfId) {
+     bot.logInfo(`忽略机器人自己产生的事件: ${event.type}`);
+     return;
+   }

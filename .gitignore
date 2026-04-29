@@ -29,7 +29,6 @@ tsconfig.tsbuildinfo
 *.ntvs*
 *.njsproj
 *.sln
-.yarn
 .vscode
 .env
 mir.py

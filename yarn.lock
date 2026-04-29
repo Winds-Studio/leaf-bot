@@ -1541,7 +1541,7 @@ __metadata:
   resolution: "@leafbot/koishi-plugin-notice@workspace:external/notice"
   dependencies:
     dayjs: "npm:^1.11.13"
-    koishi-plugin-adapter-github: "npm:^1.1.2"
+    koishi-plugin-adapter-github: "patch:koishi-plugin-adapter-github@npm%3A1.1.2#~/.yarn/patches/koishi-plugin-adapter-github-npm-1.1.2-8ac8377055.patch"
     octokit: "npm:^4.0.2"
   peerDependencies:
     koishi: ^4.18.11
@@ -5356,7 +5356,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi-plugin-adapter-github@npm:1.1.2, koishi-plugin-adapter-github@npm:^1.1.2":
+"koishi-plugin-adapter-github@npm:1.1.2":
   version: 1.1.2
   resolution: "koishi-plugin-adapter-github@npm:1.1.2"
   dependencies:
@@ -5366,6 +5366,19 @@ __metadata:
   peerDependencies:
     koishi: ^4.18.9
   checksum: 10c0/bad11013f223bca30348ce16f1e94862b7fc7de0f1a24c4ef96ec69c3a10de8482344037c4a75bab90ced6ca4cde2954e7962052c4133a6eb8fe1f732379b206
+  languageName: node
+  linkType: hard
+
+"koishi-plugin-adapter-github@patch:koishi-plugin-adapter-github@npm%3A1.1.2#~/.yarn/patches/koishi-plugin-adapter-github-npm-1.1.2-8ac8377055.patch":
+  version: 1.1.2
+  resolution: "koishi-plugin-adapter-github@patch:koishi-plugin-adapter-github@npm%3A1.1.2#~/.yarn/patches/koishi-plugin-adapter-github-npm-1.1.2-8ac8377055.patch::version=1.1.2&hash=24f01d"
+  dependencies:
+    "@octokit/graphql": "npm:^9.0.3"
+    "@octokit/rest": "npm:^22.0.1"
+    undici: "npm:^7.21.0"
+  peerDependencies:
+    koishi: ^4.18.9
+  checksum: 10c0/45a87c845d890eea9a93cc224b9853b588e724860f25b1fc6b209f614046a019e98ac66ac09319b920a743eae9a574f3c9a40e9b198280ee57adc3cec9b0f886
   languageName: node
   linkType: hard
 
@@ -5497,7 +5510,7 @@ __metadata:
     esbuild: "npm:0.25.0"
     esbuild-register: "npm:^3.6.0"
     koishi: "npm:^4.18.11"
-    koishi-plugin-adapter-github: "npm:1.1.2"
+    koishi-plugin-adapter-github: "patch:koishi-plugin-adapter-github@npm%3A1.1.2#~/.yarn/patches/koishi-plugin-adapter-github-npm-1.1.2-8ac8377055.patch"
     koishi-plugin-assets-local: "npm:^3.3.2"
     koishi-plugin-dataview: "npm:^2.7.8"
     koishi-plugin-desktop: "npm:^1.0.0"

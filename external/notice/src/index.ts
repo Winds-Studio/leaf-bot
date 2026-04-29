@@ -34,7 +34,7 @@ async function formatLeafBuildMessage() {
   });
 
   const jarAsset = releaseData.assets?.find((asset) =>
-    /^leaf-.+-\d+\.jar$/i.test(asset.name)
+    /^leaf-.+-\d+\.jar$/i.test(asset.name),
   );
 
   const tagVersion = (releaseData.tag_name || "").replace(/^ver\//, "");

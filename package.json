@@ -64,7 +64,7 @@
     "@koishijs/plugin-status": "^7.4.10",
     "@mrlingxd/koishi-plugin-adapter-onebot": "0.2.10",
     "koishi": "^4.18.11",
-    "koishi-plugin-adapter-github": "1.1.2",
+    "koishi-plugin-adapter-github": "patch:koishi-plugin-adapter-github@npm%3A1.1.2#~/.yarn/patches/koishi-plugin-adapter-github-npm-1.1.2-8ac8377055.patch",
     "koishi-plugin-assets-local": "^3.3.2",
     "koishi-plugin-dataview": "^2.7.8",
     "koishi-plugin-desktop": "^1.0.0",

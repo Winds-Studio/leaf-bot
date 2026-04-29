@@ -22,6 +22,6 @@
     "octokit": "^4.0.2"
   },
   "devDependencies": {
-    "koishi-plugin-adapter-github": "^1.1.2"
+    "koishi-plugin-adapter-github": "patch:koishi-plugin-adapter-github@npm%3A1.1.2#~/.yarn/patches/koishi-plugin-adapter-github-npm-1.1.2-8ac8377055.patch"
   }
 }
