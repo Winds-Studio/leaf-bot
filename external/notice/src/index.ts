@@ -120,7 +120,7 @@ export function apply(ctx: Context, config: Config) {
     const branch = event.ref?.replace(/^refs\/heads\//, "") || "";
     if (!branch.startsWith("ver/")) return;
 
-    const bot = ctx.bots[config.botSid];
+    const bot = ctx.bots.find((bot) => bot.selfId === config.botSid);
 
     if (!bot) {
       logger.warn("未找到可用 Bot，无法发送 Leaf 更新通知。");
