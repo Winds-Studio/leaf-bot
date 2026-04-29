@@ -33,7 +33,7 @@
     "dep": "yakumo upgrade",
     "pub": "yakumo publish",
     "dev": "cross-env NODE_ENV=development koishi start -r esbuild-register -r yml-register",
-    "start": "koishi start"
+    "start": "koishi start -r esbuild-register -r yml-register"
   },
   "dependencies": {
     "@koishijs/plugin-actions": "^0.0.2",
