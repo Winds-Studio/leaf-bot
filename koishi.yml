@@ -29,11 +29,7 @@ plugins:
     analytics:i8fv8i: {}
     android:um5upm:
       $if: env.KOISHI_AGENT?.includes('Android')
-    auth:as3r4a:
-      $if: env.NODE_ENV !== 'development'
-      admin:
-        username: ${{ env.ADMIN_USERNAME }}
-        password: ${{ env.ADMIN_PASSWORD }}
+    ~auth:as3r4a: {}
     config:a15noe: {}
     console:xd65d5:
       open: true
@@ -63,12 +59,12 @@ plugins:
       webhookSecret: ${{ env.WEBHOOK_SECRET }}
       silentMode: true
       ignoreBotSelf: false
-    '@mrlingxd/adapter-onebot:zjekt1':
+    "@mrlingxd/adapter-onebot:zjekt1":
       protocol: ws
       token: ${{ env.ONEBOT_TOKEN_ID1 }}
       selfId: ${{ env.ONEBOT_SELF_ID1 }}
       endpoint: ${{ env.ONEBOT_ENDPOINT_ID1 }}
-  '@leafbot/notice:5alkb8':
+  "@leafbot/notice:5alkb8":
     botSid: ${{ env.ONEBOT_SELF_ID1 }}
     groups: ${{ env.NOTICE_GROUPS.split(',') }}
 prefix:
