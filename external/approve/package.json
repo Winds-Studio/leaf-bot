@@ -1,0 +1,23 @@
+{
+  "name": "@leafbot/koishi-plugin-approve",
+  "description": "",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "chatbot",
+    "koishi",
+    "plugin"
+  ],
+  "dependencies": {
+    "@octokit/rest": "^21.0.0"
+  },
+  "peerDependencies": {
+    "koishi": "^4.18.11"
+  }
+}

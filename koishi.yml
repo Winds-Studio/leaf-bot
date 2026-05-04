@@ -59,13 +59,14 @@ plugins:
       webhookSecret: ${{ env.WEBHOOK_SECRET }}
       silentMode: true
       ignoreBotSelf: false
-    "@mrlingxd/adapter-onebot:zjekt1":
+    '@mrlingxd/adapter-onebot:zjekt1':
       protocol: ws
       token: ${{ env.ONEBOT_TOKEN_ID1 }}
       selfId: ${{ env.ONEBOT_SELF_ID1 }}
       endpoint: ${{ env.ONEBOT_ENDPOINT_ID1 }}
-  "@leafbot/notice:5alkb8":
+  '@leafbot/notice:5alkb8':
     botSid: ${{ env.ONEBOT_SELF_ID1 }}
     groups: ${{ env.NOTICE_GROUPS.split(',') }}
+  '@leafbot/approve:e4knt1': {}
 prefix:
   - /
