@@ -80,7 +80,7 @@ async function formatLeafBuildMessage() {
 function formatPushMessage(event: GitHubPushEvent) {
   const push = event;
 
-  const author: string = push.actor?.login || push.actor?.name || "unknown";
+  const author: string = push.headCommit?.author?.name || "unknown";
   const datetime = dayjs(push.timestamp).format("YYYY-MM-DD HH:mm");
   const branch = push.ref?.replace(/^refs\/heads\//, "") || "";
   const version = branch.slice(4);
